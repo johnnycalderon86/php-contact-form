@@ -16,27 +16,29 @@
 <body>
 
 
-
-
+    <?php include('process.php')?>
     <div class="row justify-content-center">
-    <form action="process.php" method ="POST">
+    <form action="<?= $SERVER_['PHP_SELF'];?>" method ="POST">
       <div class ="form group">
          <label for="your fullname"><strong> Fullname: </strong></strong></label>
          <input type="text" name="fullname" class="form-control" placeholder = "Your Fullname ">
+         <span class="error"><?= $name_error?></span>
     </div> 
     <br>  
     <div class ="form group">
          <label for="Email"><strong>Email:</strong></label>
          <input type="text" name="email" class="form-control" placeholder = "Email ">
+         <span class="error"><?= $email_error?></span>
     </div> 
     <div class ="form group">  
          <label for="Your message"><strong>Your message</strong> </label>
          <textarea name="biography" class="form-control"></textarea>
+         <span class="error"><?= $biography_error?></span>
      </div>  
      <br>
      <div class="form group">
 
-<button type='submit' class="btn btn-primary" ><strong>Send</strong></button>
+<button type='submit' class="btn btn-primary" ><strong>Submit</strong></button>
 </div>  
 </div> 
     </form>
