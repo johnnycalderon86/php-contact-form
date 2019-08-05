@@ -22,18 +22,18 @@
     <form action="<?= $SERVER_['PHP_SELF'];?>" method ="POST">
       <div class ="form group">
          <label for="your fullname"><strong> Fullname: </strong></strong></label>
-         <input type="text" name="fullname" class="form-control" placeholder = "Your Fullname ">
+         <input type="text" name="fullname" class="form-control" placeholder = "Your Fullname " value="<?=$name?>">
          <span class="error"><?= $name_error?></span>
     </div> 
     <br>  
     <div class ="form group">
          <label for="Email"><strong>Email:</strong></label>
-         <input type="text" name="email" class="form-control" placeholder = "Email ">
+         <input type="text" name="email" class="form-control" placeholder = "Email " value="<?=$email?>">
          <span class="error"><?= $email_error?></span>
     </div> 
     <div class ="form group">  
          <label for="Your message"><strong>Your message</strong> </label>
-         <textarea name="biography" class="form-control"></textarea>
+         <textarea name="meaasge" class="form-control" value="<?=$message?>"></textarea>
          <span class="error"><?= $biography_error?></span>
      </div>  
      <br>

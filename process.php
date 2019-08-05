@@ -2,8 +2,8 @@
 
 //----------Define variables--------//
 
-$name_error = $email_error = $biography_error = "";
-$name = $email = $biography = "";
+$name_error = $email_error = $message_error = "";
+$name = $email = $message = "";
 
 //--------------form is submitted with post method-------------//
 
@@ -26,10 +26,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
             $email_error = "Invalid email format";
         }
     }
-  if (empty($_POST["biography"])){
-      $biography_error = "Message is required";
+  if (empty($_POST["message"])){
+      $message = "";
   } else{
-      $biography = test_input($_POST['biography']);
+      $message = test_input($_POST['message']);
+  }
+  if ($name_error == "" and $email_error == ""){
+      $message_body = "";
+      unset($_POST['submit']);
+      foreach($_POST as $key => $value){
+          $message_body .= "$key: $value\n";
+      }
+      
   }
 }
 
