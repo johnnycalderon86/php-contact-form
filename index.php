@@ -41,6 +41,7 @@
 
 <button type='submit' class="btn btn-primary" ><strong>Submit</strong></button>
 </div>  
+<div class="succsess"><?=$success;?></div>
 </div> 
     </form>
 </body>

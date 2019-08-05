@@ -3,7 +3,7 @@
 //----------Define variables--------//
 
 $name_error = $email_error = $message_error = "";
-$name = $email = $message = "";
+$name = $email = $message = $success = "";
 
 //--------------form is submitted with post method-------------//
 
@@ -37,7 +37,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
       foreach($_POST as $key => $value){
           $message_body .= "$key: $value\n";
       }
-      
+      $to = 'johnnycalderondeveloper@gmail.com';
+      $subject = "Contact Form Submit";
+      if(mail($to, $subject, $message)){
+          $success = "Message sent, thank you";
+          $name = $email = $message = "";
+      }
   }
 }
 
