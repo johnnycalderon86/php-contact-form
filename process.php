@@ -46,6 +46,7 @@ $mail = new PHPMailer(true);
 try {
     //Server settings
     include("password.php");
+    $mail->SMTPDebug = 2;
     $mail->isSMTP();
     $mail->Host       = "smtp.gmail.com";// Specify main and backup SMTP servers
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
